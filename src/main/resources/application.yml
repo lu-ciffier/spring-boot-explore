@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: producer
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: lucifer
+
+  datasource:
+    username: root
+    password: lucifer
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lucifer?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  redis:
+    timeout: 60s
+    host: 192.168.2.111
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+
+
+logging:
+  path: E:/WorkSpace/log
+  level:
+    com-lucifer: DEBUG
+    com-springframework-web: INFO
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
