@@ -25,10 +25,9 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     @Bean
     public RedissonClient redissonClient() {
-        // 本例子使用的是yaml格式的配置文件，读取使用Config.fromYAML，如果是Json文件，则使用Config.fromJSON
         Config config = null;
         try {
-            config = Config.fromYAML(RedisConfig.class.getClassLoader().getResource("redisson.yml"));
+            config = Config.fromYAML(RedisConfig.class.getClassLoader().getResource("redisson-single.yml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

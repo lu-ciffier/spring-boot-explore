@@ -20,8 +20,8 @@ singleServerConfig:
   dnsMonitoringInterval: 5000
   #dnsMonitoring: false
 
-threads: 0
-nettyThreads: 0
-codec:
-  class: "org.redisson.codec.JsonJacksonCodec"
+threads: 8
+nettyThreads: 8
+#codec:
+#  class: "org.redisson.codec.JsonJacksonCodec"
 transportMode: "NIO"
