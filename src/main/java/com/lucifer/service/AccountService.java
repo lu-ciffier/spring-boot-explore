@@ -2,6 +2,7 @@ package com.lucifer.service;
 
 import com.lucifer.dao.AccountRepository;
 import com.lucifer.dao.domain.Account;
+import org.redisson.api.RedissonClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountService {
 
     private AccountRepository accountRepository;
+    private RedissonClient redissonClient;
 
-    public AccountService(AccountRepository accountRepository) {
+    public AccountService(AccountRepository accountRepository, RedissonClient redissonClient) {
         this.accountRepository = accountRepository;
+        this.redissonClient = redissonClient;
     }
 
     @GetMapping("/account/{id}")

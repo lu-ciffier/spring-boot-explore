@@ -24,17 +24,17 @@ spring:
     hibernate:
       ddl-auto: none
 
-  redis:
-    timeout: 60s
-    host: 192.168.2.111
-    port: 6379
-    password:
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: -1
+#  redis:
+#    timeout: 60s
+#    host: 192.168.2.111
+#    port: 6379
+#    password:
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+#        max-wait: -1
 
 
 logging:
