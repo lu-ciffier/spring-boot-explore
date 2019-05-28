@@ -16,11 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountService {
 
     private AccountRepository accountRepository;
-    private RedissonClient redissonClient;
 
-    public AccountService(AccountRepository accountRepository, RedissonClient redissonClient) {
+    public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
-        this.redissonClient = redissonClient;
     }
 
     @GetMapping("/account/{id}")
