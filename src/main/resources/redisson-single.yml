@@ -23,5 +23,5 @@ singleServerConfig:
 threads: 8
 nettyThreads: 8
 #codec:
-#  class: "org.redisson.codec.JsonJacksonCodec"
+#class: "org.redisson.client.codec.ByteArrayCodec"
 transportMode: "NIO"

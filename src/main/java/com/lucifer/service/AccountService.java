@@ -2,7 +2,6 @@ package com.lucifer.service;
 
 import com.lucifer.dao.AccountRepository;
 import com.lucifer.dao.domain.Account;
-import org.redisson.api.RedissonClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +27,6 @@ public class AccountService {
 
     @GetMapping("/account/{id}/cache")
     Account cache(@PathVariable("id") long accountId) {
-
-        Account user = accountRepository.getAccountByAccountId(accountId);
-        return user;
+        return accountRepository.getAccountByAccountId(accountId);
     }
 }
